@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Calculator {
+class Divide {
     private double operand1;
     private double operand2;
 
