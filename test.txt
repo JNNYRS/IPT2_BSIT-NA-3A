@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+class Calculator {
+    private double operand1;
+    private double operand2;
+
+    public Calculator(double operand1, double operand2) {
+        this.operand1 = operand1;
+        this.operand2 = operand2;
+    }
+
+    public double divide() {
+        if (operand2 != 0) {
+            return operand1 / operand2;
+        } else {
+            System.out.println("Cannot divide by zero.");
+            return Double.NaN; // Return Not-a-Number for invalid division
+        }
+    }
+}
+
+public class DivideCalculatorApp {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter dividend: ");
+        double dividend = scanner.nextDouble();
+
+        System.out.print("Enter divisor: ");
+        double divisor = scanner.nextDouble();
+
+        Calculator calculator = new Calculator(dividend, divisor);
+
+        double result = calculator.divide();
+
+        if (!Double.isNaN(result)) {
+            System.out.println("Result of division: " + result);
+        }
+
+        scanner.close();
+    }
+}
